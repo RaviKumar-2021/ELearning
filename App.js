@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import LoginAndRegistation from "./src/Navigations/LoginAndRegistation";
+import Login from "./src/Screens/Login";
+// import Signup from './src/Screens/Signup';
+// import ForgetPassword from './src/Screens/ForgetPassword';
+// import Home from './src/Screens/home/Home'
+// import LoginAndRegistation from './src/Navigations/LoginAndRegistation';
+// import Onwelcome from './src/Screens/Onwelcome'
+// import Home from "./src/Screens/home/Home";
+// import HomeMenuBar from './src/Navigations/HomeMenuBar';
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <Login/>
+    // <Signup/>
+    // <ForgetPassword/>
+    // <Home/>
+    <LoginAndRegistation />
+    // <LoginAndRegistation/>
+    // <Home/>
+    // <NavigationContainer>
+    // {/* <HomeMenuBar/> */}
+    // </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
