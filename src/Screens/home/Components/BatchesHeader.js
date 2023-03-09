@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import CourseDetails from "../CourseDetails";
-export default function BatchesHeader({ navigation }) {
+export default function BatchesHeader() {
   return (
     <View style={styles.topSection}>
       <Text style={styles.titleText}>New Courses</Text>
@@ -23,14 +23,14 @@ export default function BatchesHeader({ navigation }) {
 
 const styles = StyleSheet.create({
   topSection: {
-    backgroundColor: "#fdddf3",
+    backgroundColor: "#fef8e3",
     padding: 20,
     marginHorizontal: 20,
     marginVertical: 20,
     borderRadius: 20,
   },
   titleText: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 600,
     fontFamily: "sans-serif-condensed",
   },

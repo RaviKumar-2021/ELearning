@@ -1,0 +1,27 @@
+{
+    "user":[{
+    "name":"Ravi Kumar",
+    "nobileNo":"9254701771",
+    "email":"Ravi@gmail.com",
+    "about":"Hello Moto..",
+    "dateOfJoinning":"10-08-1999",
+    "course":[]
+},
+{
+    "name":"Karan Kumar",
+    "nobileNo":"9254701771",
+    "email":"Karan@gmail.com",
+    "about":"Hello Moto..",
+    "dateOfJoinning":"10-08-1999",
+    "course":[1]
+},
+{
+    "name":"Vikash Kumar",
+    "nobileNo":"9254701771",
+    "email":"Vikash@gmail.com",
+    "about":"Hello Moto..",
+    "dateOfJoinning":"10-08-1999",
+    "course":[2]
+}
+]
+}

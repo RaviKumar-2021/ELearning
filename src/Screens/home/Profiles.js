@@ -32,7 +32,7 @@ function Profiles() {
 
   return (
     <ImageBackground
-      source={require("../../../assets/Images/logBg.jpg")}
+      source={require("../../../assets/Images/3.png")}
       style={{ position: "absolute", height: "100%", width: "100%" }}
     >
       <ScrollView showsVerticalScrollIndicator={false}>

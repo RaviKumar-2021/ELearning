@@ -5,7 +5,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Home from "../Screens/home/Home";
 import Profiles from "../Screens/home/Profiles";
 import Batches from "../Screens/home/Batches";
-import Chats from "../Screens/home/Chats";
+import Learning from "../Screens/home/Learning";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 function HomeMenuBar() {
@@ -21,7 +21,6 @@ function HomeMenuBar() {
             // Home
             if (route.name === "Home") {
               iconName = focused ? "home-sharp" : "home-outline";
-              color: "green";
             }
 
             // Batches
@@ -29,8 +28,8 @@ function HomeMenuBar() {
               iconName = focused ? "ios-people" : "ios-people-outline";
             }
 
-            // Chats
-            if (route.name === "Chats") {
+            // Learning
+            if (route.name === "Learning") {
               iconName = focused
                 ? "chatbubble-ellipses-sharp"
                 : "chatbubble-ellipses-outline";
@@ -48,7 +47,7 @@ function HomeMenuBar() {
       >
         <Tab.Screen name="Home" component={Home} />
         <Tab.Screen name="Batches" component={Batches} />
-        <Tab.Screen name="Chats" component={Chats} />
+        <Tab.Screen name="Learning" component={Learning} />
         <Tab.Screen name="Profiles" component={Profiles} />
       </Tab.Navigator>
     </>

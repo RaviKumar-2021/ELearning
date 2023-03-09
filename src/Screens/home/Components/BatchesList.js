@@ -1,9 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-function BatchesList() {
+function BatchesList(props) {
+  console.log("Id " + props.id);
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() =>
+        props.navigation.navigate("CourseDetails", { id: props.id })
+      }
+    >
       <View style={Styles.topSection}>
         <View style={Styles.imageDiv}>
           <Image
@@ -12,11 +18,9 @@ function BatchesList() {
           />
         </View>
         <View style={Styles.textDiv}>
-          <Text style={Styles.contentType}>Type</Text>
-          <Text style={Styles.contentTitle}>
-            The Basic Of Computer Fundaments
-          </Text>
-          <Text style={Styles.contentPrice}>$ 499</Text>
+          <Text style={Styles.contentType}>{props.type}</Text>
+          <Text style={Styles.contentTitle}>{props.title}</Text>
+          <Text style={Styles.contentPrice}>$ {props.price}</Text>
         </View>
       </View>
     </TouchableOpacity>
@@ -26,13 +30,13 @@ function BatchesList() {
 const Styles = StyleSheet.create({
   topSection: {
     marginHorizontal: 20,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#fef8e3",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     height: 110,
     overflow: "hidden",
-    borderBottomColor: "#eeeeee",
+    borderBottomColor: "#fdddf3",
     borderBottomWidth: 1,
     marginBottom: 3,
     borderRadius: 10,
@@ -65,7 +69,7 @@ const Styles = StyleSheet.create({
     width: "50%",
     color: "yellow",
     fontSize: 20,
-    backgroundColor: "blue",
+    backgroundColor: "purple",
     textAlign: "center",
     fontFamily: "sans-serif-condensed",
   },

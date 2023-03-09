@@ -1,13 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-function VideoCard(props) {
+function VideoLists(props) {
   return (
-    // <TouchableOpacity
-    //   onPress={() =>
-    //     props.navigation.navigate("VideoClasses", { id: props.id })
-    //   }
-    // >
     <View style={Styles.topSection}>
       <View style={Styles.imageDiv}>
         <Image
@@ -20,17 +15,17 @@ function VideoCard(props) {
         <Text style={Styles.contentTime}>{props.duration}</Text>
       </View>
     </View>
-    // </TouchableOpacity>
   );
 }
 
 const Styles = StyleSheet.create({
   topSection: {
+    marginTop: 10,
     marginHorizontal: 20,
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#ffffff",
     flexDirection: "row",
     alignItems: "center",
-    height: 90,
+    height: 40,
     overflow: "hidden",
     borderBottomColor: "#eeeeee",
     borderBottomWidth: 1,
@@ -45,8 +40,8 @@ const Styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
-    height: 60,
-    width: 60,
+    height: 30,
+    width: 30,
   },
   textDiv: {
     width: "60%",
@@ -54,13 +49,13 @@ const Styles = StyleSheet.create({
 
   contentTitle: {
     fontFamily: "sans-serif-condensed",
-    fontSize: 18,
+    fontSize: 14,
   },
   contentTime: {
-    fontSize: 14,
+    fontSize: 10,
     fontFamily: "sans-serif-condensed",
     color: "#a9a9a9",
   },
 });
 
-export default VideoCard;
+export default VideoLists;

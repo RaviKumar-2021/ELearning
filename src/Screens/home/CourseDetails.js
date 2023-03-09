@@ -12,9 +12,15 @@ import {
 } from "react-native";
 import Menter from "./Components/Menter";
 import VideoCard from "./Components/VideoCard";
+import course from "../../../assets/Json/course.json";
 
-function CourseDetails({ navigation }) {
-  const windowWidth = Dimensions.get("window").width;
+function CourseDetails({ route, navigation }) {
+  const { id } = route.params;
+  const courseData = course.course;
+
+  console.log(id);
+  const value = courseData[id];
+  console.log(value);
   const windowHeight = Dimensions.get("window").height;
   const [comHeight, setcomHeight] = useState(200);
   console.log(windowHeight - 600);
@@ -106,12 +112,21 @@ function CourseDetails({ navigation }) {
             showsVerticalScrollIndicator={false}
             style={{ height: windowHeight - comHeight - 150 }}
           >
-            <VideoCard navigation={navigation} />
-            <VideoCard navigation={navigation} />
-            <VideoCard navigation={navigation} />
+            {value.chapter.map((e, i) => {
+              return (
+                <VideoCard
+                  navigation={navigation}
+                  title={e.title}
+                  duration={e.duration}
+                  id={id}
+                />
+              );
+            })}
           </ScrollView>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("VideoClasses", { id: id })}
+        >
           <View style={{ justifyContent: "center", alignItems: "center" }}>
             <Text
               style={{

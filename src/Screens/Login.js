@@ -26,7 +26,7 @@ export default function Login({ navigation }) {
 
   return (
     <ImageBackground
-      source={require("../../assets/Images/image_part_002.jpg")}
+      source={require("../../assets/Images/2.png")}
       style={styles.bacStyle}
     >
       <View style={{ paddingHorizontal: 40, marginTop: 110 }}>
@@ -38,14 +38,17 @@ export default function Login({ navigation }) {
           <TextInput
             style={styles.input}
             placeholder="Email"
+            placeholderTextColor="#fff"
             onChange={(e) => setemail(e.nativeEvent.text)}
           />
           <TextInput
             style={styles.input}
             placeholder="Password"
             secureTextEntry={true}
+            placeholderTextColor="#fff"
             onChange={(e) => setpassword(e.nativeEvent.text)}
           />
+
           <TouchableOpacity
             onPress={() => {
               navigation.navigate("ForgetPassword");
@@ -66,11 +69,17 @@ export default function Login({ navigation }) {
             justifyContent: "center",
             position: "absolute",
             bottom: 10,
+            fontFamily: "sans-serif-condensed",
           }}
         >
           <Text style={styles.lastText}>I'm already a member , </Text>
           <Text
-            style={{ fontSize: 20, color: "#4c4ef9", fontWeight: "bold" }}
+            style={{
+              fontSize: 20,
+              color: "darkblue",
+              fontWeight: "bold",
+              fontFamily: "sans-serif-condensed",
+            }}
             onPress={() => {
               navigation.navigate("Signup");
             }}
@@ -104,23 +113,25 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: "#fff",
     fontWeight: 800,
+    fontFamily: "sans-serif-condensed",
   },
   subheadText: {
     fontSize: 22,
     paddingVertical: 10,
     paddingRight: 60,
     lineHeight: 25,
-    color: "red",
+    color: "#ff8080",
     fontStyle: "italic",
+    fontFamily: "sans-serif-condensed",
   },
   input: {
     width: "100%",
     height: 40,
     borderColor: "#fff",
-    borderWidth: 0.5,
-    borderRadius: 5,
+    borderBottomWidth: 1,
     marginBottom: 20,
     paddingLeft: 10,
+    color: "#fff",
   },
   buttonContainer: {
     backgroundColor: "#fff",
@@ -139,6 +150,7 @@ const styles = StyleSheet.create({
   lastText: {
     color: "yellow",
     fontSize: 20,
+    fontFamily: "sans-serif-condensed",
   },
   forgotText: {
     marginTop: -10,
@@ -146,5 +158,7 @@ const styles = StyleSheet.create({
     position: "relative",
     right: -60,
     fontStyle: "italic",
+    color: "#ffbbbb",
+    fontFamily: "sans-serif-condensed",
   },
 });
