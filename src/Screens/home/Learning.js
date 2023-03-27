@@ -1,15 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import {
   View,
   Text,
   ScrollView,
   Dimensions,
   ImageBackground,
+  TouchableOpacity,
 } from "react-native";
 import VideoCard from "./Components/VideoCard";
-
+import user from "../../../assets/Json/user.json";
 function Learning({ navigation }) {
+  const [logData, setlogData] = useState("");
   const windowHeight = Dimensions.get("window").height;
+  data = async () => {
+    const userEmail = await AsyncStorage.getItem("email");
+    const userData = await user.user.find((e) => e.email == userEmail);
+    setlogData(userData.course);
+  };
+  data();
 
   return (
     <>
@@ -23,10 +33,18 @@ function Learning({ navigation }) {
             showsVerticalScrollIndicator={false}
             style={{ height: windowHeight - 100 }}
           >
-            <VideoCard navigation={navigation} />
-            <VideoCard navigation={navigation} />
-            <VideoCard navigation={navigation} />
-            <VideoCard navigation={navigation} />
+            <View style={{ display: logData.length > 0 ? "flex" : "none" }}>
+              <TouchableOpacity
+                onPress={() =>
+                  props.navigation.navigate("VideoClasses", { id: props.id })
+                }
+              >
+                <VideoCard navigation={navigation} prop />
+              </TouchableOpacity>
+            </View>
+            <View style={{ display: logData.length > 0 ? "none" : "flex" }}>
+              <Text>Data Not Found</Text>
+            </View>
           </ScrollView>
         </View>
       </ImageBackground>

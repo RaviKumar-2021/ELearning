@@ -5,6 +5,7 @@
     "email":"Ravi@gmail.com",
     "about":"Hello Moto..",
     "dateOfJoinning":"10-08-1999",
+    "password":"Ravi@123",
     "course":[]
 },
 {
@@ -13,6 +14,7 @@
     "email":"Karan@gmail.com",
     "about":"Hello Moto..",
     "dateOfJoinning":"10-08-1999",
+    "password":"Karan@123",
     "course":[1]
 },
 {
@@ -21,6 +23,8 @@
     "email":"Vikash@gmail.com",
     "about":"Hello Moto..",
     "dateOfJoinning":"10-08-1999",
+    "password":"Vikash@123",
+
     "course":[2]
 }
 ]

@@ -1,6 +1,7 @@
 import { Button } from "@rneui/themed";
 import HomeMenuBar from "../Navigations/HomeMenuBar";
 import React, { useState } from "react";
+import user from "../../assets/Json/user.json";
 import {
   StyleSheet,
   View,
@@ -9,18 +10,23 @@ import {
   Text,
   ImageBackground,
 } from "react-native";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function Login({ navigation }) {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState();
-  const Email = "Ravi@gmail.com";
-  const Pass = "Ravi@123";
 
-  const loginHandler = () => {
-    if (email == Email && Pass == password) {
-      navigation.navigate("HomeMenuBar");
+  const loginHandler = async () => {
+    const isUser = user.user.find((e) => e.email == email);
+    if (isUser) {
+      const isPassword = isUser.password == password;
+      if (isPassword) {
+        navigation.navigate("HomeMenuBar");
+        await AsyncStorage.setItem("email", email);
+      } else {
+        console.log("Please Enter Valid Password");
+      }
     } else {
-      console.log("Same Thing Is Wrong...");
+      console.log("Please Enter Valid Email");
     }
   };
 
@@ -48,7 +54,6 @@ export default function Login({ navigation }) {
             placeholderTextColor="#fff"
             onChange={(e) => setpassword(e.nativeEvent.text)}
           />
-
           <TouchableOpacity
             onPress={() => {
               navigation.navigate("ForgetPassword");

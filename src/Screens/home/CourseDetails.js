@@ -18,7 +18,6 @@ function CourseDetails({ route, navigation }) {
   const { id } = route.params;
   const courseData = course.course;
 
-  console.log(id);
   const value = courseData[id];
   console.log(value);
   const windowHeight = Dimensions.get("window").height;
